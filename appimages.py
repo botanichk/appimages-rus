@@ -422,6 +422,43 @@ Terminal=false
         ensure_dir(self.settings['appimage_dir'])
         ensure_dir(APP_DIR)
         ensure_dir(ICON_BASE_DIR)
+    def create_desktop_entry(self, appimage_path, name, icon_url):
+        desktop_filename = f"{name.replace(' ', '_').lower()}.desktop"
+        desktop_path = os.path.expanduser(f"~/.local/share/applications/{desktop_filename}")
+
+        icon_path = "application-x-executable"
+        if icon_url:
+            icon_filename = f"{name.replace(' ', '_').lower()}.png"
+            icon_path = os.path.join(ICON_BASE_DIR, icon_filename)
+            try:
+                response = requests.get(icon_url, timeout=10)
+                if response.status_code == 200:
+                    ensure_dir(ICON_BASE_DIR)
+                    with open(icon_path, 'wb') as f:
+                        f.write(response.content)
+                    subprocess.run(['gtk-update-icon-cache', '-f', os.path.expanduser('~/.local/share/icons/hicolor')], capture_output=True)
+                    icon_path = icon_filename
+            except Exception as e:
+                print(f"Ошибка загрузки иконки: {e}")
+                icon_path = "application-x-executable"
+
+        desktop_content = f"""[Desktop Entry]
+Name={name}
+Exec={appimage_path}
+Icon={icon_path}
+Type=Application
+Categories=Utility;
+Comment=Запустить {name} через AppImage
+Terminal=false
+"""
+
+        try:
+            ensure_dir(os.path.dirname(desktop_path))
+            with open(desktop_path, 'w') as f:
+                f.write(desktop_content)
+            subprocess.run(['update-desktop-database', os.path.expanduser('~/.local/share/applications')], capture_output=True)
+        except Exception as e:
+            self.update_status(f"Не удалось создать .desktop файл: {e}")
 
 if __name__ == "__main__":
     app = AppImageManager()
