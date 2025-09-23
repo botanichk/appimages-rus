@@ -15,6 +15,10 @@
 
 bash
 
+
+
+
+
 yay -S python312 --noconfirm
 sudo pacman -S python-gobject python-requests gtk3 --needed
 sudo nano /usr/local/bin/appimages/appimages.py
