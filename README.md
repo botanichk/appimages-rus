@@ -15,6 +15,5 @@ git clone https://github.com/botanichk/appimages-rus.git
 cd appimages-rus
 chmod +x install.sh
 sudo ./install.sh
-"
+🐧 🐧 🐧 🐧 🐧
 
-"
