@@ -1,4 +1,7 @@
-# 🐧 Void Community AppImage Helper
+Братик, вот **полный, рабочий блок Markdown**, который можно **копировать целиком и вставлять в README.md** — с установкой, удалением, инструкцией для Arch.
+
+```markdown
+# 🐧 Void Community AppImage Helper — МОЯ ИСПРАВЛЕННАЯ ВЕРСИЯ
 
 > *«Начало чего-то нового и лучшего»* — как и задумывал автор, но теперь — на родном языке.
 
@@ -28,7 +31,56 @@
 ## 🚀 Установка — 3 команды и готово
 
 ```bash
-git clone https://github.com/botanichk/appimages-rus.git
+git clone https://github.com/botanichk/appimages-rus.git 
 cd appimages-rus
 chmod +x install.sh
 sudo ./install.sh
+```
+
+После установки запускай:
+
+```bash
+appimages-helper
+```
+
+Или найди в меню:  
+> **Void Community AppImage Helper**
+
+---
+
+## ⚠️ Для пользователей Arch-based систем (CachyOS, Arch, EndeavourOS)
+
+На данный момент **Python 3.13 не полностью совместим с PyGObject**, из-за чего приложение не запускается.
+
+**Решение:**
+
+```bash
+yay -S python312 --noconfirm
+sudo pacman -S python-gobject python-requests gtk3 --needed
+sudo nano /usr/local/bin/appimages/appimages.py
+```
+
+Замени первую строку на:  
+```python
+#!/usr/bin/env python3.12
+```
+
+Сохрани и запусти:  
+```bash
+appimages-helper
+```
+
+> 💡 Это временная мера — проблема исчезнет после обновления `python-gobject`.
+
+---
+
+## 🧹 Удаление
+
+Чтобы полностью удалить приложение со всеми следами:
+
+```bash
+sudo rm -rf /usr/local/bin/appimages
+sudo rm -f /usr/local/bin/appimages-helper
+sudo rm -f /usr/share/applications/appimages.desktop
+rm -rf ~/.config/appimages
+```
