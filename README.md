@@ -27,7 +27,7 @@
 
 ## 🚀 Установка и удаление — всё просто
 ```
-```bash
+```
 git clone https://github.com/botanichk/appimages-rus.git
 ```
 ```
@@ -47,7 +47,17 @@ appimages-helper
 # Void Community AppImage Helper
 
 # 🧹 Полное удаление:
+```
 sudo rm -rf /usr/local/bin/appimages
+```
+```
 sudo rm -f /usr/local/bin/appimages-helper
+```
+```
 sudo rm -f /usr/share/applications/appimages.desktop
+```
+```
+rm -rf ~/.config/appimages
+```
+o rm -f /usr/share/applications/appimages.desktop
 rm -rf ~/.config/appimages
