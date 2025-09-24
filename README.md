@@ -26,29 +26,31 @@
 ## 🚀 Установка и удаление — всё просто
 ```
 git clone https://github.com/botanichk/appimages-rus.git
-```
+
 cd appimages-rus
-```
+
 chmod +x install.sh
-```
+
 sudo ./install.sh
 ```
 
 # После установки запускай:
-
+```
 appimages-helper
+```
 
 # Или найди в меню:
 # Void Community AppImage Helper
 
 # 🧹 Полное удаление:
+
 ```
 sudo rm -rf /usr/local/bin/appimages
-```
+
 sudo rm -f /usr/local/bin/appimages-helper
-```
+
 sudo rm -f /usr/share/applications/appimages.desktop
-```
+
 rm -rf ~/.config/appimages
 ```
 o rm -f /usr/share/applications/appimages.desktop
