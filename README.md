@@ -53,5 +53,4 @@ sudo rm -f /usr/share/applications/appimages.desktop
 
 rm -rf ~/.config/appimages
 ```
-o rm -f /usr/share/applications/appimages.desktop
-rm -rf ~/.config/appimages
+
