@@ -60,11 +60,11 @@ bash
 appimages-helper
 Это временная мера — проблема исчезнет после обновления python-gobject.
 
-🧹 Полное удаление
+ 🧹 Полное удаление
 Чтобы полностью удалить приложение со всеми следами:
 
 bash
 sudo rm -rf /usr/local/bin/appimages
 sudo rm -f /usr/local/bin/appimages-helper
 sudo rm -f /usr/share/applications/appimages.desktop
-rm -rf 
+rm -rf ~/.config/appimages
