@@ -34,13 +34,13 @@ chmod +x install.sh
 sudo ./install.sh
 ```
 
-# После установки запускай:
+## После установки запускай:
 ```
 appimages-helper
 ```
 
-# Или найди в меню:
-# Void Community AppImage Helper
+### Или найди в меню:
+### Void Community AppImage Helper
 
 # 🧹 Полное удаление:
 ---
@@ -58,13 +58,5 @@ sudo rm -rf appimages-rus && git clone https://github.com/botanichk/appimages-ru
 sudo bash -c 'rm -rf /usr/local/bin/appimages /usr/local/bin/appimages-helper /usr/share/applications/appimages.desktop && rm -rf ~/.config/appimages' && rm -rf ~/appimages-rus
 ```
 > Удалит всё: бинарники, ярлык, конфиги и даже папку с исходниками. Терминал снова чист, как после дождя.
-```
-sudo rm -rf /usr/local/bin/appimages
 
-sudo rm -f /usr/local/bin/appimages-helper
-
-sudo rm -f /usr/share/applications/appimages.desktop
-
-rm -rf ~/.config/appimages
-```
 
