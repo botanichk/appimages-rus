@@ -43,7 +43,21 @@ appimages-helper
 # Void Community AppImage Helper
 
 # 🧹 Полное удаление:
+---
+🧠  А это для тех, кто ценит время  😎
 
+🚀 Установка
+---
+```
+sudo rm -rf appimages-rus && git clone https://github.com/botanichk/appimages-rus.git && cd appimages-rus && chmod +x install.sh && sudo ./install.sh
+```
+---
+🧹 Удаление
+---
+```
+sudo bash -c 'rm -rf /usr/local/bin/appimages /usr/local/bin/appimages-helper /usr/share/applications/appimages.desktop && rm -rf ~/.config/appimages' && rm -rf ~/appimages-rus
+```
+> Удалит всё: бинарники, ярлык, конфиги и даже папку с исходниками. Терминал снова чист, как после дождя.
 ```
 sudo rm -rf /usr/local/bin/appimages
 
